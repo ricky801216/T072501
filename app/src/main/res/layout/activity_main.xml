@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,10 +7,44 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tw.com.pcschool.t072501.MainActivity">
-
+    tools:context="tw.com.pcschool.t072501.MainActivity"
+    android:orientation="vertical">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Hello World"
+        android:gravity="center"
+        android:id="@+id/tv_message"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:text="你好帥"
+        android:id="@+id/btnA"
+        android:onClick="btnA"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="就跟金城武一樣帥"
+        android:id="@+id/btnB"
+        android:onClick="btnB"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="我長得很像郭富城"
+        android:id="@+id/btnC"
+        android:onClick="btnC"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="喜歡的水果"
+        android:id="@+id/btnD"
+        android:onClick="btnD"/>
+    <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="刨冰口味"
+    android:id="@+id/btnE"
+    android:onClick="btnE"/>
+</LinearLayout>
