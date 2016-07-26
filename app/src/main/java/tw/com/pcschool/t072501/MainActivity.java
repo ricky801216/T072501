@@ -1,10 +1,14 @@
 package tw.com.pcschool.t072501;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -137,6 +141,59 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
                 }
                 // tv.setText(fruits[w]);
                 // Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        builder.create().show();
+    }
+    public void btnF(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("列表對話框");
+        final String[] rice = {"豬排飯","鰻魚飯","牛肉蓋飯"};
+        builder.setItems(rice, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                m_tv_message.setText(rice[which]);
+            }
+        });
+        builder.setNegativeButton("取消", new Dialog.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create().show();
+    }
+
+    public void btnG(View v)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("自訂布局對話框");
+
+        LayoutInflater inflater = getLayoutInflater();
+        View dv = inflater.inflate(R.layout.dialogview, (ViewGroup) findViewById(R.id.root));
+        builder.setView(dv);
+
+        Button btn = (Button) dv.findViewById(R.id.button7);
+        final TextView tv2 = (TextView) dv.findViewById(R.id.textView2);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int r = (int)(Math.random() * 100);
+                String s = String.valueOf(r);
+                tv2.setText(s);
+            }
+        });
+
+        builder.setPositiveButton("確定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
